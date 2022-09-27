@@ -6,7 +6,7 @@
 #    By: aderouba <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/26 12:24:51 by aderouba          #+#    #+#              #
-#    Updated: 2022/09/27 15:23:48 by aderouba         ###   ########.fr        #
+#    Updated: 2022/09/27 15:43:03 by aderouba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,6 @@ fclean : clean
 re : fclean $(NAME)
 
 test : $(NAME)
-	gcc main.c -lbsd -L. -lft
-	make fclean
+	gcc -g main.c -lbsd -L. -lft
 
 .PHONY: all clean fclean re test

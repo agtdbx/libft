@@ -6,11 +6,11 @@
 /*   By: aderouba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 13:11:50 by aderouba          #+#    #+#             */
-/*   Updated: 2022/09/27 13:17:44 by aderouba         ###   ########.fr       */
+/*   Updated: 2022/09/27 14:24:32 by aderouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {

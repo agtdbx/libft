@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aderouba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/27 12:54:53 by aderouba          #+#    #+#             */
-/*   Updated: 2022/09/27 14:24:16 by aderouba         ###   ########.fr       */
+/*   Created: 2022/09/27 14:42:46 by aderouba          #+#    #+#             */
+/*   Updated: 2022/09/27 14:48:55 by aderouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	int	i;
+	size_t	i;
+	char	*s;
+	char	*d;
+	char	tmp[4194304];
 
+	s = (char *) src;
+	d = (char *) dest;
 	i = 0;
-	while (s[i] != '\0')
+	while (i < n)
 	{
-		if (s[i] == c)
-			return ((char *) (&s[i]));
+		tmp[i] = s[i];
 		i++;
 	}
-	return (0);
+	i = 0;
+	while (i < n)
+	{
+		d[i] = tmp[i];
+		i++;
+	}
+	return ((void *)d);
 }

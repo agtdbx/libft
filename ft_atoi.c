@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aderouba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/27 12:54:53 by aderouba          #+#    #+#             */
-/*   Updated: 2022/09/27 14:24:16 by aderouba         ###   ########.fr       */
+/*   Created: 2022/09/27 15:14:19 by aderouba          #+#    #+#             */
+/*   Updated: 2022/09/27 15:23:02 by aderouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int		ft_atoi(const char *nptr)
 {
 	int	i;
+	int	res;
+	int	neg;
 
 	i = 0;
-	while (s[i] != '\0')
+	res = 0;
+	neg = 1;
+	while (nptr[i] == ' ')
+		i++;
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		if (s[i] == c)
-			return ((char *) (&s[i]));
+		if (nptr[i] == '-')
+			neg = -1;
 		i++;
 	}
-	return (0);
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		res = res * 10 + nptr[i] - '0';
+		i++;
+	}
+	return (res * neg);
 }

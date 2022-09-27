@@ -6,11 +6,11 @@
 #    By: aderouba <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/26 12:24:51 by aderouba          #+#    #+#              #
-#    Updated: 2022/09/27 13:22:04 by aderouba         ###   ########.fr        #
+#    Updated: 2022/09/27 15:23:48 by aderouba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-TARGET = libft.a
+NAME = libft.a
 
 SRCS =	ft_isalpha.c \
 		ft_isdigit.c \
@@ -25,7 +25,16 @@ SRCS =	ft_isalpha.c \
 		ft_strchr.c \
 		ft_strrchr.c \
 		ft_strncmp.c \
-		ft_strnstr.c
+		ft_strnstr.c \
+		ft_strdup.c \
+		ft_memset.c \
+		ft_memcpy.c \
+		ft_memmove.c \
+		ft_memchr.c \
+		ft_memcmp.c \
+		ft_bzero.c \
+		ft_atoi.c \
+		ft_calloc.c
 
 OBJS = ${SRCS:.c=.o}
 
@@ -36,20 +45,21 @@ INCLUDE = -I .
 %.o : %.c
 	$(CC) $(FLAGS) -o $@ -c $< $(INCLUDE)
 
-$(TARGET) : $(OBJS)
+$(NAME) : $(OBJS)
 	ar cr -o $@ $^
 
-all : $(TARGET)
+all : $(NAME)
 
 clean :
 	rm -f $(OBJS)
 
 fclean : clean
-	rm -f $(TARGET)
+	rm -f $(NAME)
 
-re : fclean $(TARGET)
+re : fclean $(NAME)
 
-test : $(TARGET)
+test : $(NAME)
 	gcc main.c -lbsd -L. -lft
+	make fclean
 
 .PHONY: all clean fclean re test

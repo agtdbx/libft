@@ -6,11 +6,11 @@
 /*   By: aderouba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 12:03:08 by aderouba          #+#    #+#             */
-/*   Updated: 2022/09/27 12:06:06 by aderouba         ###   ########.fr       */
+/*   Updated: 2022/09/27 14:24:26 by aderouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 char	*ft_strlcpy(char *dst, const char *src, size_t size)
 {

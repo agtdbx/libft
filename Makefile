@@ -6,7 +6,7 @@
 #    By: aderouba <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/26 12:24:51 by aderouba          #+#    #+#              #
-#    Updated: 2022/09/26 15:59:54 by aderouba         ###   ########.fr        #
+#    Updated: 2022/09/27 13:22:04 by aderouba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,14 @@ SRCS =	ft_isalpha.c \
 		ft_isascii.c \
 		ft_isprint.c \
 		ft_toupper.c \
-		ft_tolower.c
+		ft_tolower.c \
+		ft_strlen.c \
+		ft_strlcat.c \
+		ft_strlcpy.c \
+		ft_strchr.c \
+		ft_strrchr.c \
+		ft_strncmp.c \
+		ft_strnstr.c
 
 OBJS = ${SRCS:.c=.o}
 
@@ -30,7 +37,7 @@ INCLUDE = -I .
 	$(CC) $(FLAGS) -o $@ -c $< $(INCLUDE)
 
 $(TARGET) : $(OBJS)
-	ar cr -o $@ $(OBJS)
+	ar cr -o $@ $^
 
 all : $(TARGET)
 
@@ -43,6 +50,6 @@ fclean : clean
 re : fclean $(TARGET)
 
 test : $(TARGET)
-	gcc main.c -L. -lft
+	gcc main.c -lbsd -L. -lft
 
 .PHONY: all clean fclean re test

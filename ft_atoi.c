@@ -6,11 +6,9 @@
 /*   By: aderouba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 15:14:19 by aderouba          #+#    #+#             */
-/*   Updated: 2022/09/28 15:11:56 by aderouba         ###   ########.fr       */
+/*   Updated: 2022/09/28 16:44:56 by aderouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {

@@ -6,18 +6,21 @@
 /*   By: aderouba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 12:03:08 by aderouba          #+#    #+#             */
-/*   Updated: 2022/09/27 14:24:26 by aderouba         ###   ########.fr       */
+/*   Updated: 2022/09/28 16:05:24 by aderouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
+	i = 0;
+	while (src[i] != '\0')
+		i++;
 	if (size == 0)
-		return (dst);
+		return (i);
 	i = 0;
 	while (src[i] != '\0' && i < size - 1)
 	{
@@ -25,5 +28,7 @@ char	*ft_strlcpy(char *dst, const char *src, size_t size)
 		i++;
 	}
 	dst[i] = '\0';
-	return (dst);
+	while (src[i] != '\0')
+		i++;
+	return (i);
 }

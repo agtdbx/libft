@@ -6,13 +6,13 @@
 #    By: aderouba <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/26 12:24:51 by aderouba          #+#    #+#              #
-#    Updated: 2022/09/27 15:43:03 by aderouba         ###   ########.fr        #
+#    Updated: 2022/09/28 16:03:30 by aderouba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRCS =	ft_isalpha.c \
+SRC =	ft_isalpha.c \
 		ft_isdigit.c \
 		ft_isalnum.c \
 		ft_isascii.c \
@@ -36,29 +36,36 @@ SRCS =	ft_isalpha.c \
 		ft_atoi.c \
 		ft_calloc.c
 
-OBJS = ${SRCS:.c=.o}
+OBJ = ${SRC:.c=.o}
 
 CC = gcc
-FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 INCLUDE = -I .
 
 %.o : %.c
-	$(CC) $(FLAGS) -o $@ -c $< $(INCLUDE)
+	$(CC) $(CFLAGS) -o $@ -c $< $(INCLUDE)
 
-$(NAME) : $(OBJS)
+$(NAME) : $(OBJ)
 	ar cr -o $@ $^
 
 all : $(NAME)
 
 clean :
-	rm -f $(OBJS)
+	rm -f $(OBJ)
 
 fclean : clean
 	rm -f $(NAME)
 
 re : fclean $(NAME)
 
-test : $(NAME)
-	gcc -g main.c -lbsd -L. -lft
+bonus :
 
-.PHONY: all clean fclean re test
+so :
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)
+
+test : $(NAME)
+	rm -f libft.so
+	gcc main.c -L. -lft -lbsd
+
+.PHONY: all clean fclean re bonus so test

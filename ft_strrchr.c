@@ -6,7 +6,7 @@
 /*   By: aderouba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 13:08:09 by aderouba          #+#    #+#             */
-/*   Updated: 2022/09/27 14:24:39 by aderouba         ###   ########.fr       */
+/*   Updated: 2022/09/28 13:01:30 by aderouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ char	*ft_strrchr(const char *s, int c)
 			res = (char *)(&s[i]);
 		i++;
 	}
+	if (s[i] == c)
+		return ((char *)(&s[i]));
 	return (res);
 }

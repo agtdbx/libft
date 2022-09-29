@@ -6,7 +6,7 @@
 /*   By: aderouba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 15:23:58 by aderouba          #+#    #+#             */
-/*   Updated: 2022/09/28 16:08:36 by aderouba         ###   ########.fr       */
+/*   Updated: 2022/09/29 11:50:40 by aderouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*res;
 
+	if (nmemb > 2147483647 || size > 2147483647
+		|| nmemb * size > 2147483647)
+		return (NULL);
 	res = malloc(nmemb * size);
 	if (res == NULL)
 		return (NULL);

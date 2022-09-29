@@ -6,7 +6,7 @@
 #    By: aderouba <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/26 12:24:51 by aderouba          #+#    #+#              #
-#    Updated: 2022/09/28 16:56:17 by aderouba         ###   ########.fr        #
+#    Updated: 2022/09/29 14:00:16 by aderouba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,8 @@ SRC =	ft_isalpha.c \
 		ft_bzero.c \
 		ft_atoi.c \
 		ft_calloc.c \
-		ft_substr.c
+		ft_substr.c \
+		ft_strjoin.c
 
 OBJ = ${SRC:.c=.o}
 
@@ -67,6 +68,6 @@ so :
 
 test : $(NAME)
 	rm -f libft.so
-	gcc main.c -L. -lft -lbsd
+	gcc -g main.c -L. -lft -lbsd
 
 .PHONY: all clean fclean re bonus so test

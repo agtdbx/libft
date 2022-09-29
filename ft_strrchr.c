@@ -6,7 +6,7 @@
 /*   By: aderouba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 13:08:09 by aderouba          #+#    #+#             */
-/*   Updated: 2022/09/28 16:47:08 by aderouba         ###   ########.fr       */
+/*   Updated: 2022/09/29 11:20:57 by aderouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 	res = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
+		if (s[i] == (char)c)
 			res = (char *)(&s[i]);
 		i++;
 	}

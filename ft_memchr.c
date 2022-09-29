@@ -6,7 +6,7 @@
 /*   By: aderouba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 14:50:52 by aderouba          #+#    #+#             */
-/*   Updated: 2022/09/28 14:34:21 by aderouba         ###   ########.fr       */
+/*   Updated: 2022/09/29 11:23:29 by aderouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (tmp[i] == c)
+		if (tmp[i] == (char)c)
 			return ((void *)(&tmp[i]));
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: aderouba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 13:19:55 by aderouba          #+#    #+#             */
-/*   Updated: 2022/09/28 16:52:42 by aderouba         ###   ########.fr       */
+/*   Updated: 2022/09/29 11:08:29 by aderouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (little[0] == '\0' || len == 0)
+	if (big == NULL && len == 0)
+		return (NULL);
+	if (little[0] == '\0')
 		return ((char *)big);
 	i = 0;
 	while (big[i] != '\0' && i <= len)

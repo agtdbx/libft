@@ -6,7 +6,7 @@
 /*   By: aderouba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 10:33:27 by aderouba          #+#    #+#             */
-/*   Updated: 2022/09/28 16:46:47 by aderouba         ###   ########.fr       */
+/*   Updated: 2022/09/29 11:48:38 by aderouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	if (dst == NULL && size == 0)
 		return (0);
-	i = 0;
+	i = ft_strlen(dst);
 	j = 0;
-	while (dst[i] != '\0')
-		i++;
 	if (size == 0)
-		return (i);
+		return (ft_strlen((char *)src));
 	while (src[j] != '\0' && i + j < size - 1)
 	{
 		dst[i + j] = src[j];

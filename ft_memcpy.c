@@ -6,7 +6,7 @@
 /*   By: aderouba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 14:22:56 by aderouba          #+#    #+#             */
-/*   Updated: 2022/09/28 14:32:58 by aderouba         ###   ########.fr       */
+/*   Updated: 2022/09/29 11:43:37 by aderouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	dst = (unsigned char *) dest;
 	if (n == 0)
 		return (dest);
-	while (tmp[i] != '\0' && i < n)
+	while (i < n)
 	{
 		dst[i] = tmp[i];
 		i++;

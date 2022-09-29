@@ -6,7 +6,7 @@
 /*   By: aderouba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 14:14:25 by aderouba          #+#    #+#             */
-/*   Updated: 2022/09/29 14:51:06 by aderouba         ###   ########.fr       */
+/*   Updated: 2022/09/29 16:26:45 by aderouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
 	int		j;
-	char	*res;
 
 	if (s1 == NULL || set == NULL)
 		return (NULL);
@@ -43,6 +42,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 	j++;
 	if (j - i < 0)
 		return (ft_strdup(""));
-	res = ft_substr(s1, i, j - i);
-	return (res);
+	return (ft_substr(s1, i, j - i));
 }

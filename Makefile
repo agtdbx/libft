@@ -6,7 +6,7 @@
 #    By: aderouba <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/26 12:24:51 by aderouba          #+#    #+#              #
-#    Updated: 2022/09/30 11:18:26 by aderouba         ###   ########.fr        #
+#    Updated: 2022/09/30 11:31:03 by aderouba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,11 @@ SRC =	ft_isalpha.c \
 		ft_split.c \
 		ft_itoa.c \
 		ft_strmapi.c \
-		ft_striteri.c
+		ft_striteri.c \
+		ft_putchar_fd.c \
+		ft_putstr_fd.c \
+		ft_putendl_fd.c \
+		ft_putnbr_fd.c
 
 OBJ = ${SRC:.c=.o}
 

@@ -6,7 +6,7 @@
 /*   By: aderouba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 14:33:14 by aderouba          #+#    #+#             */
-/*   Updated: 2022/09/30 11:19:31 by aderouba         ###   ########.fr       */
+/*   Updated: 2022/09/30 11:32:06 by aderouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,10 @@ int		ft_atoi(const char *nptr);
 char	*ft_itoa(int n);
 
 void	*ft_calloc(size_t nmemb, size_t size);
+
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 #endif

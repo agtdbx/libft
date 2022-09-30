@@ -6,12 +6,12 @@
 /*   By: aderouba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 10:56:42 by aderouba          #+#    #+#             */
-/*   Updated: 2022/09/30 17:18:03 by aderouba         ###   ########.fr       */
+/*   Updated: 2022/09/30 17:31:48 by aderouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include <stdio.h>
 static char	*push_back_char(char *str, char c)
 {
 	int		i;
@@ -25,7 +25,9 @@ static char	*push_back_char(char *str, char c)
 static char	*recursive_write(char *str, long nb)
 {
 	long	tmp;
+	char	*res;
 
+	printf("%li\n", nb);
 	tmp = nb % 10;
 	if (nb >= 10)
 	{
@@ -33,7 +35,9 @@ static char	*recursive_write(char *str, long nb)
 		nb /= 10;
 		str = recursive_write(str, nb);
 	}
-	return (push_back_char(str, tmp + '0'));
+	res = push_back_char(str, tmp + '0');
+	printf("%s\n", res);
+	return (res);
 }
 
 static int	get_size_char(long nb)

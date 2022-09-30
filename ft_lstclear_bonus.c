@@ -6,7 +6,7 @@
 /*   By: aderouba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 13:47:27 by aderouba          #+#    #+#             */
-/*   Updated: 2022/09/30 15:48:00 by aderouba         ###   ########.fr       */
+/*   Updated: 2022/09/30 17:03:38 by aderouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,3 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	ft_lstdelone(actual, del);
 	*lst = NULL;
 }
-

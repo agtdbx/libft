@@ -6,13 +6,13 @@
 /*   By: aderouba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 13:21:18 by aderouba          #+#    #+#             */
-/*   Updated: 2022/09/30 14:50:07 by aderouba         ###   ########.fr       */
+/*   Updated: 2022/09/30 17:04:02 by aderouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int		res;
 	t_list	*actual;

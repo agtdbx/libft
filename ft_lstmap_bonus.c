@@ -6,11 +6,17 @@
 /*   By: aderouba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 16:00:30 by aderouba          #+#    #+#             */
-/*   Updated: 2022/09/30 16:57:21 by aderouba         ###   ########.fr       */
+/*   Updated: 2022/09/30 17:09:48 by aderouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void	*clear_and_return(t_list *lst, void (*del)(void *))
+{
+	ft_lstclear(&lst, del);
+	return (NULL);
+}
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
@@ -22,20 +28,14 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		return (NULL);
 	tmp = (*f)(lst->content);
 	if (tmp == NULL)
-	{
-		ft_lstclear(&res, del);
-		return (NULL);
-	}
+		return (clear_and_return(res, del));
 	res = ft_lstnew(tmp);
 	actual = lst->next;
 	while (actual != NULL)
 	{
 		tmp = ft_lstnew((*f)(actual->content));
 		if (tmp == NULL)
-		{
-			ft_lstclear(&res, del);
-			return (NULL);
-		}
+			return (clear_and_return(res, del));
 		ft_lstadd_back(&res, tmp);
 		actual = actual->next;
 	}

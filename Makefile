@@ -6,7 +6,7 @@
 #    By: aderouba <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/26 12:24:51 by aderouba          #+#    #+#              #
-#    Updated: 2022/09/29 14:53:27 by aderouba         ###   ########.fr        #
+#    Updated: 2022/09/30 11:09:16 by aderouba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,9 @@ SRC =	ft_isalpha.c \
 		ft_substr.c \
 		ft_strjoin.c \
 		ft_strtrim.c \
-		ft_split.c
+		ft_split.c \
+		ft_itoa.c \
+		ft_strmapi.c
 
 OBJ = ${SRC:.c=.o}
 

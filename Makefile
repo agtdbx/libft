@@ -6,9 +6,11 @@
 #    By: aderouba <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/26 12:24:51 by aderouba          #+#    #+#              #
-#    Updated: 2022/09/30 11:31:03 by aderouba         ###   ########.fr        #
+#    Updated: 2022/09/30 15:59:10 by aderouba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+MAKEFLAGS = --no-print-directory
 
 NAME = libft.a
 
@@ -45,9 +47,24 @@ SRC =	ft_isalpha.c \
 		ft_putchar_fd.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
-		ft_putnbr_fd.c
+		ft_putnbr_fd.c \
+
+SRC_BONUS =	ft_lstnew_bonus.c \
+			ft_lstadd_front_bonus.c \
+			ft_lstsize_bonus.c \
+			ft_lstlast_bonus.c \
+			ft_lstadd_back_bonus.c \
+			ft_lstdelone_bonus.c \
+			ft_lstclear_bonus.c \
+			ft_lstiter_bonus.c \
+			ft_lstmap_bonus.c
+
+ifdef BONUS
+	SRC += $(SRC_BONUS)
+endif
 
 OBJ = ${SRC:.c=.o}
+OBJ_BONUS = ${SRC_BONUS:.c=.o}
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -62,7 +79,7 @@ $(NAME) : $(OBJ)
 all : $(NAME)
 
 clean :
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(OBJ_BONUS)
 
 fclean : clean
 	rm -f $(NAME)
@@ -70,12 +87,13 @@ fclean : clean
 re : fclean $(NAME)
 
 bonus :
+	@make BONUS=1
 
 so :
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(SRC_BONUS)
+	gcc -nostartfiles -shared -o libft.so $(OBJ) $(OBJ_BONUS)
 
-test : $(NAME)
+test : bonus
 	rm -f libft.so
 	gcc -g main.c -L. -lft -lbsd
 

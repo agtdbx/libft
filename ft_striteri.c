@@ -6,17 +6,15 @@
 /*   By: aderouba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 11:21:14 by aderouba          #+#    #+#             */
-/*   Updated: 2022/09/30 11:26:05 by aderouba         ###   ########.fr       */
+/*   Updated: 2022/10/03 13:41:36 by aderouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
 
-	if (s == NULL)
+	if (s == (void *)0)
 		return ;
 	i = 0;
 	while (s[i] != '\0')

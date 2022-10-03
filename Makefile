@@ -6,7 +6,7 @@
 #    By: aderouba <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/26 12:24:51 by aderouba          #+#    #+#              #
-#    Updated: 2022/10/03 11:45:47 by aderouba         ###   ########.fr        #
+#    Updated: 2022/10/03 13:46:27 by aderouba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,12 +89,4 @@ re : fclean $(NAME)
 bonus :
 	@make BONUS=1
 
-so :
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(SRC_BONUS)
-	gcc -nostartfiles -shared -o libft.so $(OBJ) $(OBJ_BONUS)
-
-test : bonus
-	rm -f libft.so
-	gcc -g main.c -L. -lft -lbsd
-
-.PHONY: all clean fclean re bonus so test
+.PHONY: all clean fclean re bonus

@@ -6,12 +6,12 @@
 /*   By: aderouba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 10:56:42 by aderouba          #+#    #+#             */
-/*   Updated: 2022/09/30 17:31:48 by aderouba         ###   ########.fr       */
+/*   Updated: 2022/10/03 10:17:29 by aderouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
 static char	*push_back_char(char *str, char c)
 {
 	int		i;
@@ -27,7 +27,6 @@ static char	*recursive_write(char *str, long nb)
 	long	tmp;
 	char	*res;
 
-	printf("%li\n", nb);
 	tmp = nb % 10;
 	if (nb >= 10)
 	{
@@ -36,7 +35,6 @@ static char	*recursive_write(char *str, long nb)
 		str = recursive_write(str, nb);
 	}
 	res = push_back_char(str, tmp + '0');
-	printf("%s\n", res);
 	return (res);
 }
 
@@ -51,8 +49,11 @@ static int	get_size_char(long nb)
 		nb *= -1;
 	}
 	while (nb >= 10)
+	{
+		nb /= 10;
 		res++;
-	return (res + 1);
+	}
+	return (res);
 }
 
 char	*ft_itoa(int n)

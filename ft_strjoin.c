@@ -6,7 +6,7 @@
 /*   By: aderouba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 14:02:17 by aderouba          #+#    #+#             */
-/*   Updated: 2022/09/29 14:08:20 by aderouba         ###   ########.fr       */
+/*   Updated: 2022/10/03 16:00:00 by aderouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	i = ft_strlen((char *)s1);
-	j = ft_strlen((char *)s2);
-	res = malloc(sizeof(char) * (i + j + 1));
+	res = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (res == NULL)
 		return (NULL);
 	i = 0;

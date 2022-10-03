@@ -6,7 +6,7 @@
 /*   By: aderouba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 16:56:26 by aderouba          #+#    #+#             */
-/*   Updated: 2022/09/29 13:56:37 by aderouba         ###   ########.fr       */
+/*   Updated: 2022/10/03 16:03:17 by aderouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (s == NULL)
 		return (NULL);
-	if (len == 0 || start >= ft_strlen((char *)s))
+	if (len == 0 || start >= ft_strlen(s))
 		return (ft_strdup(""));
 	i = 0;
 	while (s[start + i] != '\0' && i < len)

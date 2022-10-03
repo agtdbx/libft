@@ -6,7 +6,7 @@
 /*   By: aderouba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 14:14:25 by aderouba          #+#    #+#             */
-/*   Updated: 2022/09/29 16:26:45 by aderouba         ###   ########.fr       */
+/*   Updated: 2022/10/03 16:03:09 by aderouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	while (in_set(set, s1[i]))
 		i++;
-	j = ft_strlen((char *)s1) - 1;
+	j = ft_strlen(s1) - 1;
 	while (in_set(set, s1[j]))
 		j--;
 	j++;

@@ -6,7 +6,7 @@
 /*   By: aderouba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 10:56:42 by aderouba          #+#    #+#             */
-/*   Updated: 2022/10/03 10:26:22 by aderouba         ###   ########.fr       */
+/*   Updated: 2022/10/03 10:47:08 by aderouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static int	get_size_char(long nb)
 		nb /= 10;
 		res++;
 	}
-	return (res);
+	return (res + 1);
 }
 
 char	*ft_itoa(int n)

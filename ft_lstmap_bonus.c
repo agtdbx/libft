@@ -6,7 +6,7 @@
 /*   By: aderouba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 16:00:30 by aderouba          #+#    #+#             */
-/*   Updated: 2022/10/04 14:35:51 by aderouba         ###   ########.fr       */
+/*   Updated: 2022/10/04 14:42:05 by aderouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*actual;
 
 	if (lst == NULL || f == NULL || del == NULL)
-		return (NULL);Z
+		return (NULL);
 	res = ft_lstnew((*f)(lst->content));
 	if (res == NULL)
 		return (NULL);

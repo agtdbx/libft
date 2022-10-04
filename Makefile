@@ -6,7 +6,7 @@
 #    By: aderouba <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/26 12:24:51 by aderouba          #+#    #+#              #
-#    Updated: 2022/10/03 13:46:27 by aderouba         ###   ########.fr        #
+#    Updated: 2022/10/04 14:27:10 by aderouba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,7 @@ INCLUDE = -I .
 	$(CC) $(CFLAGS) -o $@ -c $< $(INCLUDE)
 
 $(NAME) : $(OBJ)
-	ar cr -o $@ $^
+	ar cr $@ $^
 
 all : $(NAME)
 

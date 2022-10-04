@@ -6,13 +6,13 @@
 /*   By: aderouba <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 14:55:13 by aderouba          #+#    #+#             */
-/*   Updated: 2022/09/29 16:39:12 by aderouba         ###   ########.fr       */
+/*   Updated: 2022/10/04 14:11:54 by aderouba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**add_word(char **tab, char *word)
+static char	**add_word(char **tab, char *word)
 {
 	int		i;
 	char	**res;
